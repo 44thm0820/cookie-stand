@@ -22,7 +22,7 @@ nav {
 h1 {
   color: #ffa535;
 }
-li {
+/* li {
   color:#ffa535;
   text-decoration: none;
   font-size: 21px;
@@ -37,4 +37,8 @@ li {
   flex-direction: row;
   justify-content: space-between;
   border: 1px solid;
+} */
+
+td {
+  
 }
