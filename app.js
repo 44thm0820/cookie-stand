@@ -80,10 +80,10 @@ function header() {
 header();
 
 let seattle = new CookieStore('Seattle', 23, 65, 6.3);
-let tokyo = new CookieStore('Tokyo', 23, 65, 6.3);
-let dubai = new CookieStore('Dubai', 23, 65, 6.3);
-let paris = new CookieStore('Paris', 23, 65, 6.3);
-let lima = new CookieStore('Lima', 23, 65, 6.3);
+let tokyo = new CookieStore('Tokyo', 3, 24, 1.2);
+let dubai = new CookieStore('Dubai', 11, 38, 3.7);
+let paris = new CookieStore('Paris', 20, 38, 2.3);
+let lima = new CookieStore('Lima', 2, 16, 4.6);
 
 seattle.renderTheList();
 tokyo.renderTheList();
