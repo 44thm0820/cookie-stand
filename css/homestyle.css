@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #ffebad;
+}
 
 header {
   background-color: gray;
@@ -54,7 +57,7 @@ main article section {
 h1 {
   color: #ffa535;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 900;
   text-align: center;
 }
 
@@ -89,7 +92,7 @@ footer {
 h3 {
   color: #ffa535;
   font-size: 20px;
-  font-weight:500;
+  font-weight:700;
   
 }
 
