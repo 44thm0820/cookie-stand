@@ -25,10 +25,29 @@
     </nav>
    </header>
    <main>
-  <div id="cookieStores">
+  <section>
+    <form id="cookieForm">
+      <fieldset>
+        <legend>Add a Cookie Stand</legend>
+        <label>Stand Name:
+          <input type="text" name="storeName">
+        </label>
+        <label>Min Cookies Sold:
+          <input type="number" name="min">
+        </label>
+        <label>Max Cookies Sold:
+          <input type="number" name="max">
+        </label>
+        <label>Average Number of Customers:
+          <input type="number" name="customerAverage">
+        </label>
+      </fieldset>
+      <button type="submit">Add a Store</button>
+    </form>
+  </section>
 
-  </div>
-  <div>
+  
+  <div id="cookieStores">
   <table>
     <thead>
 
@@ -41,7 +60,6 @@
     </tfoot>
   </table>
 </div>
-</section>
 </main>
 </body>
 <script src="app.js"></script>
