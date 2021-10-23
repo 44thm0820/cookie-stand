@@ -78,9 +78,14 @@ a {
   color: rgb(214, 214, 214);
   text-decoration: none;
   font-weight: 500;
-  background: #ffb320;
+  
   padding: 15px 28px;
   background-color: black;
+}
+
+a:hover {
+  color: white;
+  background: #ffb320;
 }
 
 footer {
