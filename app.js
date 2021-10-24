@@ -101,6 +101,17 @@ function handleSubmit(event) {
 
 }
 
+let seattle = new CookieStore('Seattle', 23, 65, 6.3);
+let tokyo = new CookieStore('Tokyo', 3, 24, 1.2);
+let dubai = new CookieStore('Dubai', 11, 38, 3.7);
+let paris = new CookieStore('Paris', 20, 38, 2.3);
+let lima = new CookieStore('Lima', 2, 16, 4.6);
+
+seattle.renderTheList();
+tokyo.renderTheList();
+dubai.renderTheList();
+paris.renderTheList();
+lima.renderTheList();
 
 function footer() {
   // this.dailyTotal += this.getCookieSalesPerHour();
@@ -114,40 +125,30 @@ function footer() {
   let td = document.createElement('td');
   td.textContent = 'Total' 
   tr.appendChild(td);
-  
   let totalOfTotal = 0;
+  
   for (let i = 0; i < hours.length -1; i++) {
-  
-  let tdHourlyTotal = document.createElement('td');
-  
   let hourlyTotal = 0;
+    
  for (let j = 0; j < storeArray.length; j++) {
 
-  hourlyTotal += storeArray[j][i];
+  hourlyTotal += storeArray[j].cookiesSoldEachHourArray[i];
  }
+ totalOfTotal += hourlyTotal;
+  let tdHourlyTotal = document.createElement('td');
   storeTotal.push(hourlyTotal);
-  tdHourlyTotal.textContent(hourlyTotal);
+  tdHourlyTotal.textContent = hourlyTotal;
   tr.appendChild(tdHourlyTotal);
 }
   // loop through storetotal array 
   // sum up all of the contents 
   // append that sum to the end of the row
   let tdTotalOfTotal = document.createElement('td');
-  tr.appendChild(tdTotalOfTotal)
   tdTotalOfTotal.textContent = totalOfTotal; 
+  tr.appendChild(tdTotalOfTotal);
 };
 
-let seattle = new CookieStore('Seattle', 23, 65, 6.3);
-let tokyo = new CookieStore('Tokyo', 3, 24, 1.2);
-let dubai = new CookieStore('Dubai', 11, 38, 3.7);
-let paris = new CookieStore('Paris', 20, 38, 2.3);
-let lima = new CookieStore('Lima', 2, 16, 4.6);
 
-seattle.renderTheList();
-tokyo.renderTheList();
-dubai.renderTheList();
-paris.renderTheList();
-lima.renderTheList();
 
 footer();
 
