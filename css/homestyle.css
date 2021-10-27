@@ -94,12 +94,20 @@ footer {
   padding: 50px;
 }
 
+footer > h2 {
+  text-align: center;
+}
+
 h3 {
   color: #ffa535;
   font-size: 20px;
   font-weight:700;
   
 }
+
+
+
+
 
 
 
