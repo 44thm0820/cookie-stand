@@ -7,6 +7,7 @@ let storeArray = [];
 const cookieTable = document.querySelector('thead');
 const cookieTableBody = document.querySelector('tbody');
 const cookieFooter = document.querySelector('tfoot');
+const cookieForm = document.getElementById('cookieForm');
 
 
 
@@ -60,7 +61,7 @@ function CookieStore(storeName, min, max, avg) {
 
    
   // };
-  // storeArray.push(this);
+  storeArray.push(this);
 }
 
 function header() {
@@ -79,6 +80,27 @@ function header() {
 
 header();
 
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let storeName = event.target.storeName.value;
+  let min = event.target.min.value;
+  let max = event.target.max.value;
+  let customerAverage = event.target.customerAverage.value;
+  let newStore = new CookieStore(storeName, min, max, customerAverage);
+  newStore.renderTheList();
+  let cookieTableRemove = document.getElementsByTagName('tfoot')[0];
+  let cookieTableRow = document.getElementById('newTotal');
+  console.log(cookieTableRemove);
+  cookieTableRemove.removeChild(cookieTableRow);
+  
+  footer();
+  //delete total current row
+  // re-render totals row
+  // give it an id so that it's easier to grab
+
+}
+
 let seattle = new CookieStore('Seattle', 23, 65, 6.3);
 let tokyo = new CookieStore('Tokyo', 3, 24, 1.2);
 let dubai = new CookieStore('Dubai', 11, 38, 3.7);
@@ -91,34 +113,46 @@ dubai.renderTheList();
 paris.renderTheList();
 lima.renderTheList();
 
-
 function footer() {
   // this.dailyTotal += this.getCookieSalesPerHour();
   // this.cookiesSoldEachHourArray.push(this.getCookieSalesPerHour());
+
+  let storeTotal = [];
+
   let tr = document.createElement('tr');
+  tr.setAttribute('id','newTotal');
   cookieFooter.appendChild(tr);
   let td = document.createElement('td');
-  td.textContent = 'Total'
+  td.textContent = 'Total' 
   tr.appendChild(td);
-  
   let totalOfTotal = 0;
-  for (let i = 0; i < hours.length -1; i++) {
   
-  let tdHourlyTotal = document.createElement('td');
+  for (let i = 0; i < hours.length -1; i++) {
   let hourlyTotal = 0;
-  console.log(seattle.cookiesSoldEachHourArray);
-   hourlyTotal = seattle.cookiesSoldEachHourArray[i] + tokyo.cookiesSoldEachHourArray[i] + dubai.cookiesSoldEachHourArray[i] + paris.cookiesSoldEachHourArray[i] + lima.cookiesSoldEachHourArray[i];
-  totalOfTotal += hourlyTotal;
-  tdHourlyTotal.textContent = hourlyTotal
-  // console.log(tdHourlyTotal);
+    
+ for (let j = 0; j < storeArray.length; j++) {
+
+  hourlyTotal += storeArray[j].cookiesSoldEachHourArray[i];
+ }
+ totalOfTotal += hourlyTotal;
+  let tdHourlyTotal = document.createElement('td');
+  storeTotal.push(hourlyTotal);
+  tdHourlyTotal.textContent = hourlyTotal;
   tr.appendChild(tdHourlyTotal);
-};
-  let tdTotalOfTotal = document.createElement('td');
-  tdTotalOfTotal.textContent = totalOfTotal;
-  tr.appendChild(tdTotalOfTotal)
 }
+  // loop through storetotal array 
+  // sum up all of the contents 
+  // append that sum to the end of the row
+  let tdTotalOfTotal = document.createElement('td');
+  tdTotalOfTotal.textContent = totalOfTotal; 
+  tr.appendChild(tdTotalOfTotal);
+};
+
+
 
 footer();
+
+cookieForm.addEventListener('submit',handleSubmit);
 
 
 

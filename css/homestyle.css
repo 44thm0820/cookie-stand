@@ -48,7 +48,7 @@ main article {
   width: 480px;
   padding: 1rem 0 0 1rem;
 }
-main article section {
+main article .more-info {
   overflow: scroll;
   height: 265px;
   margin-bottom: 33px;
@@ -61,17 +61,29 @@ h1 {
   text-align: center;
 }
 
-main article section::-webkit-scrollbar {
+main article .more-info::-webkit-scrollbar {
   display: none;
 }
 
 main img {
-  margin: 10px 0;
+  margin: 10px 0px;
 }
 
-section {
+article h3 {
+  text-align: center;
+}
+
+
+
+.fish-apparel {
   display: flex;
   justify-content: space-between;
+  /* flex-wrap: wrap; */
+
+}
+
+.fish-apparel img {
+  margin: 8px;
 }
 
 a {
@@ -94,12 +106,49 @@ footer {
   padding: 50px;
 }
 
+footer > h2 {
+  text-align: center;
+}
+
 h3 {
   color: #ffa535;
   font-size: 20px;
   font-weight:700;
+  font-family: 'Roboto';
   
 }
+
+.location-container {
+  content: overflow;
+}
+
+.location-details {
+  margin: 3%;
+  margin-top: 12%;
+  display: float;
+  float: left;
+  margin-left: 10%;
+}
+
+.location-details h2 {
+  text-align: center;
+  
+}
+
+.location-details li {
+ /* text-align: center; */
+ list-style: none;
+ padding: 10px;
+
+}
+
+
+
+
+
+
+
+
 
 
 

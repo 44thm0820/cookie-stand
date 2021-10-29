@@ -46,16 +46,19 @@ img {
   height: 70px;
 }
 
- 
 
-div table {
-  background-color:#ffa535;
-  padding: 30px;
-}
  
 td,tr, th {
   padding: 2rem;
+  width: 20px;
+  
 }
+
+table {
+  table-layout: fixed;
+  width: 900px;
+}
+
 h1 {
   color: #ffa535;
   font-size: 40px;
